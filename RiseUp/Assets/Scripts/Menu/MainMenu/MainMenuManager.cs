@@ -16,8 +16,7 @@ namespace Menu.MainMenu
         public GameObject optionsMenu;
 
         // Text inputs
-        [Space] [Header("Text Fields")]
-        public TMP_InputField playerNameInputText;
+        [Space] [Header("Text Fields")] public TMP_InputField playerNameInputText;
 
         #endregion
 
@@ -38,7 +37,7 @@ namespace Menu.MainMenu
         {
             Application.Quit();
         }
-        
+
         /// <summary>
         /// Transition to Options Menu
         /// </summary>
@@ -56,7 +55,7 @@ namespace Menu.MainMenu
             optionsMenu.SetActive(false);
             mainMenu.SetActive(true);
         }
-        
+
         #endregion
     }
 }
