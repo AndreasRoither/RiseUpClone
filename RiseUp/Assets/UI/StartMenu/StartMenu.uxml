@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="MainPane" style="flex-grow: 1; justify-content: center;">
+        <Style src="StartMenu.uss" />
+        <ui:VisualElement name="TopPane" style="justify-content: center; flex-grow: 1; align-items: center;">
+            <ui:Label text="RiseUpClone" name="TitleLbl" style="font-size: 36px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="MenuPane" style="justify-content: center; flex-grow: 1; align-items: center;">
+            <ui:Button text="Play" name="playBtn" focusable="false" class="menu-btn" />
+            <ui:Button text="Options" name="optionsBtn" class="menu-btn" />
+            <ui:Button text="Quit" name="quitBtn" class="menu-btn" />
+        </ui:VisualElement>
+        <ui:VisualElement name="EndPane" style="justify-content: flex-end; flex-grow: 1; align-items: center;">
+            <ui:Label text="v. 1.0" style="margin-left: 15px; margin-right: 15px; margin-top: 15px; margin-bottom: 15px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
