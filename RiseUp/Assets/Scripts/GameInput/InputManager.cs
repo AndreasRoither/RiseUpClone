@@ -61,6 +61,10 @@ namespace GameInput
             {
                 ContinuousInputEvent?.Invoke(Camera.main.ScreenToWorldPoint(Input.mousePosition));
             }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                InputEndEvent?.Invoke(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            }
         }
 
         /// <summary>
@@ -73,12 +77,12 @@ namespace GameInput
             {
                 if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
                 {
-                    InputEndEvent?.Invoke(touch.position);
+                    InputEndEvent?.Invoke(Camera.main.ScreenToWorldPoint(touch.position));
                     return;
                 }
                 else
                 {
-                    ContinuousInputEvent?.Invoke(touch.position);
+                    ContinuousInputEvent?.Invoke(Camera.main.ScreenToWorldPoint(touch.position));
                     return;
                 }
             }

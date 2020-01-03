@@ -30,6 +30,15 @@
                 <e p="vector_style8.xml" t="Include" />
               </e>
             </e>
+            <e p="gameicons" t="Include">
+              <e p="License.txt" t="Include" />
+              <e p="Spritesheet" t="Include">
+                <e p="sheet_black1x.xml" t="Include" />
+                <e p="sheet_black2x.xml" t="Include" />
+                <e p="sheet_white1x.xml" t="Include" />
+                <e p="sheet_white2x.xml" t="Include" />
+              </e>
+            </e>
             <e p="generic-items-160-assets" t="Include">
               <e p="License.txt" t="Include" />
               <e p="Spritesheet" t="Include">
@@ -69,17 +78,15 @@
                 </e>
               </e>
               <e p="License.txt" t="Include" />
-              <e p="Mushroom expansion" t="Include">
-                <e p="PNG" t="Include">
-                  <e p="spritesheet.xml" t="Include" />
-                </e>
-              </e>
             </e>
           </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="Controller" t="Include">
             <e p="RisingUpController.cs" t="Include" />
+          </e>
+          <e p="Extension" t="Include">
+            <e p="UnityEngineExtensions.cs" t="Include" />
           </e>
           <e p="GameInput" t="Include">
             <e p="InputEvent.cs" t="Include" />
@@ -91,10 +98,17 @@
               <e p="MainMenuManager.cs" t="Include" />
             </e>
           </e>
+          <e p="Objects" t="Include">
+            <e p="FallingObject.cs" t="Include" />
+          </e>
           <e p="SimpleCameraController.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="GameUIManager.cs" t="Include" />
             <e p="SpriteStretch.cs" t="Include" />
+          </e>
+          <e p="Utility" t="Include">
+            <e p="DeactivationZone.cs" t="Include" />
+            <e p="Singleton.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

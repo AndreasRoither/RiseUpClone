@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using Utility;
 
 namespace Controller
 {
-    public class RisingUpController : MonoBehaviour
+    public class RisingUpController : Singleton<RisingUpController>
     {
         #region Fields
 
@@ -20,6 +21,11 @@ namespace Controller
         #endregion
 
         #region Methods
+
+        // (Optional) Prevent non-singleton constructor use.
+        protected RisingUpController()
+        {
+        }
 
         private void Update()
         {
@@ -36,6 +42,7 @@ namespace Controller
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
+            if (collision.gameObject.CompareTag("Player")) return;
             if (hit) return;
             if (currentRoutine != null) StopCoroutine(currentRoutine);
             currentRoutine = null;

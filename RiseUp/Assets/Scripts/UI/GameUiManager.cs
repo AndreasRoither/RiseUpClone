@@ -8,6 +8,7 @@ namespace UI
         public TextMeshProUGUI levelText;
         public TextMeshProUGUI scoreText;
         public TextMeshProUGUI midText;
+        public GameObject retryUi;
 
         public void SetScore(int score)
         {
@@ -22,6 +23,11 @@ namespace UI
         public void SetMidText(string text)
         {
             midText.text = text;
+        }
+
+        public void ToggleRetryUi(bool toggle)
+        {
+            retryUi.SetActive(toggle);
         }
     }
 }
