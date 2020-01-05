@@ -339,12 +339,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   riseSpeed: 1
-  closeByRelay: {fileID: 2311257858872041613}
   bodyRelay: {fileID: 405941874}
-  hitEvent:
+  closeByRelay: {fileID: 2311257858872041613}
+  closeByEvent:
     m_PersistentCalls:
       m_Calls: []
-  closeByEvent:
+  hitEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &648215638097313774
@@ -356,8 +356,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2074512992925078344, guid: b296a02004426d9f49709752f443b3fe,
         type: 3}
-      propertyPath: delayBetweenEmotions
+      propertyPath: minEmotionTime
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074512992925078344, guid: b296a02004426d9f49709752f443b3fe,
+        type: 3}
+      propertyPath: maxEmotionTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074512992925078344, guid: b296a02004426d9f49709752f443b3fe,
+        type: 3}
+      propertyPath: delayBetweenEmotions
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2074512992925078345, guid: b296a02004426d9f49709752f443b3fe,
         type: 3}
@@ -413,6 +423,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2074512992925078345, guid: b296a02004426d9f49709752f443b3fe,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2074512992925078346, guid: b296a02004426d9f49709752f443b3fe,
         type: 3}

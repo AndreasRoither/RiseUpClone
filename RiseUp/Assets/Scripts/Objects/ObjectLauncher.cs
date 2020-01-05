@@ -6,30 +6,28 @@ namespace Objects
 {
     public class ObjectLauncher : MonoBehaviour
     {
-        public float angle = 45f;
-        private Coroutine currentRoutine;
         public float detectionRange = 5f;
-        public int maxRetries;
-
-        public int objectAmount;
-
-        // remove; testing purposes
-        public GameObject objectToSpawn;
-        private int retryCount;
-
-        private bool shooting;
+        public float angle = 45f;
         public float thrust = 1f;
         public float timeBetweenObjects = 0.5f;
+        public int maxRetries;
+        public int objectAmount;
+        
+        // remove; testing purposes
+        public GameObject objectToSpawn;
 
+        private int retryCount;
+        private Coroutine currentRoutine;
+        private bool shooting;
 
         private void Update()
         {
             if (shooting) return;
             if (retryCount > maxRetries) return;
-
-            retryCount++;
             if (!(transform.position.y - RisingUpController.Instance.transform.position.y <
                   detectionRange)) return;
+            
+            retryCount++;
             StartLaunch();
         }
 

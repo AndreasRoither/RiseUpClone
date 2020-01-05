@@ -10,11 +10,13 @@ namespace Menu.MainMenu
     /// Author: Andreas Roither
     public class MainMenuManager : MonoBehaviour
     {
-        [Header("Menu Fields")] public GameObject mainMenu;
+        [Header("Menu Fields")] 
+        public GameObject mainMenu;
         public GameObject optionsMenu;
 
         // Text inputs
-        [Space] [Header("Text Fields")] public TMP_InputField playerNameInputText;
+        [Space] [Header("Text Fields")] 
+        public TMP_InputField playerNameInputText;
 
 
         /// <summary>

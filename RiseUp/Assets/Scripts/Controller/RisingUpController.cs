@@ -9,23 +9,22 @@ namespace Controller
 {
     public class RisingUpController : Singleton<RisingUpController>
     {
-        private readonly List<float> modifier = new List<float>();
-
+        [Space] [Header("General")] 
+        public float riseSpeed = 0.5f;
+        
+        [Space] [Header("Relays")] 
         public ColliderRelay bodyRelay;
+        public ColliderRelay closeByRelay;
 
+        [Space] [Header("Events")] 
         public UnityEvent closeByEvent = new UnityEvent();
-
-        [Space] [Header("Relays")] public ColliderRelay closeByRelay;
+        public UnityEvent hitEvent = new UnityEvent();
+        
+        private readonly List<float> modifier = new List<float>();
         private Coroutine currentRoutine;
         private bool hit;
-
-        [Space] [Header("Events")] public UnityEvent hitEvent = new UnityEvent();
-
-        [Space] [Header("General")] public float riseSpeed = 0.5f;
-
         private bool risingUp;
-
-
+        
         // Prevent non-singleton constructor use.
         protected RisingUpController()
         {

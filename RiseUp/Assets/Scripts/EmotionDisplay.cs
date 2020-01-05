@@ -14,39 +14,37 @@ public class EmotionDisplay : MonoBehaviour
         Lost
     }
 
-    private readonly Random random = new Random();
-    private Vector3 bottomLeftCorner = Vector3.zero;
-    private Vector3 bottomRightCorner = Vector3.zero;
-
-
     // close for objects that are close
     // love for saving the player
     // happy emotion randomly
     // lost emotions on loosing
-    [Space] [Header("Emotions")] public List<Sprite> closeEmotions = new List<Sprite>();
-
-    private Coroutine currentRoutine;
-    private Sprite currentSprite;
-    public float delayBetweenEmotions;
-    private float displayTime;
+    [Space] [Header("Emotions")] 
+    public List<Sprite> closeEmotions = new List<Sprite>();
     public List<Sprite> happyEmotions = new List<Sprite>();
-    private Vector3 initialLocalPosition;
-    public bool lostEmotionOverride = true;
     public List<Sprite> lostEmotions = new List<Sprite>();
     public List<Sprite> loveEmotions = new List<Sprite>();
+    public bool lostEmotionOverride = true;
+    
+    [Space] [Header("Emotion time")] 
+    public float minEmotionTime = 3f;
     public float maxEmotionTime = 5f;
-
-    [Space] [Header("Emotion time")] public float minEmotionTime = 3f;
-    private SpriteRenderer spriteRenderer;
-
-    private Vector3 topLeftCorner = Vector3.zero;
-    private Vector3 topRightCorner = Vector3.zero;
-
+    public float delayBetweenEmotions;
+    
     [Space] [Header("Spawn bounds")] public float xLeftBound = 1f;
     public float xRightBound = 1f;
     public float yLowerBound = 1f;
     public float yUpperBound = 1f;
 
+    private readonly Random random = new Random();
+    private Vector3 topLeftCorner = Vector3.zero;
+    private Vector3 topRightCorner = Vector3.zero;
+    private Vector3 bottomLeftCorner = Vector3.zero;
+    private Vector3 bottomRightCorner = Vector3.zero;
+    private Vector3 initialLocalPosition;
+    private Coroutine currentRoutine;
+    private Sprite currentSprite;
+    private SpriteRenderer spriteRenderer;
+    private float displayTime;
 
     private void Awake()
     {
@@ -64,19 +62,17 @@ public class EmotionDisplay : MonoBehaviour
         bottomLeftCorner = new Vector3(position.x - xLeftBound, position.y - yLowerBound, 0);
         bottomRightCorner = new Vector3(position.x + xRightBound, position.y - yLowerBound, 0);
 
-        DisplayRandomEmotion(Emotion.Happy);
+        currentSprite = happyEmotions[random.Next(0, happyEmotions.Count)];
+        DisplayEmotion();
     }
-
-
-    public void DisplayRandomEmotion(Emotion emotion)
+    
+    public void DisplayEmotionIfPossible(Emotion emotion)
     {
-        if (!(lostEmotionOverride && emotion == Emotion.Close))
-            if (currentSprite != null && Time.time < displayTime + delayBetweenEmotions)
+        if (!(lostEmotionOverride && emotion == Emotion.Lost))
+            if (Time.time < displayTime + delayBetweenEmotions)
                 return;
         if (currentRoutine != null) StopCoroutine(currentRoutine);
-
-        var position = initialLocalPosition;
-
+        
         switch (emotion)
         {
             case Emotion.Close:
@@ -95,7 +91,13 @@ public class EmotionDisplay : MonoBehaviour
                 currentSprite = null;
                 break;
         }
+        
+        DisplayEmotion();
+    }
 
+    private void DisplayEmotion()
+    {
+        var position = initialLocalPosition;
         var x = (float) random.NextDouble() * (position.x + xRightBound - (position.x - xLeftBound)) +
                 (position.x - xLeftBound);
         var y = (float) random.NextDouble() * (position.y + yUpperBound - (position.y - yLowerBound)) +

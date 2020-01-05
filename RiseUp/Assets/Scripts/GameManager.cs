@@ -7,15 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private Coroutine currentCoroutine;
+    public GameUiManager uiManager;
     public EmotionDisplay emotionDisplay;
-    private Vector3 newPosition = Vector3.zero;
-    public Rigidbody2D player;
     public RisingUpController risingUpController;
+    public Rigidbody2D player;
     public float startDelay = 3f;
 
-    public GameUiManager uiManager;
-
+    private Coroutine currentCoroutine;
+    private Vector3 newPosition = Vector3.zero;
 
     private void Awake()
     {
@@ -66,12 +65,12 @@ public class GameManager : MonoBehaviour
         if (currentCoroutine != null) StopCoroutine(currentCoroutine);
         uiManager.SetMidText("Nice try! Your highscore:" + (int) risingUpController.GetHeight());
         uiManager.ToggleRetryUi(true);
-        emotionDisplay.DisplayRandomEmotion(EmotionDisplay.Emotion.Lost);
+        emotionDisplay.DisplayEmotionIfPossible(EmotionDisplay.Emotion.Lost);
     }
 
     private void OnRiseUpCloseByHit()
     {
-        emotionDisplay.DisplayRandomEmotion(EmotionDisplay.Emotion.Close);
+        emotionDisplay.DisplayEmotionIfPossible(EmotionDisplay.Emotion.Close);
     }
 
     private IEnumerator StartDelay()

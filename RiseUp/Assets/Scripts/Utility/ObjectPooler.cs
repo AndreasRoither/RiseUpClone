@@ -18,15 +18,14 @@ namespace Utility
             public int size;
             public string tag;
         }
-        
-        private static ObjectPooler instance;
 
         public bool destroyOnLoad;
 
-        [SerializeField] public Dictionary<string, Queue<GameObject>> poolDictionary;
-
+        [SerializeField] 
+        public Dictionary<string, Queue<GameObject>> poolDictionary;
         public List<Pool> pools;
 
+        private static ObjectPooler instance;
 
         /// <summary>
         ///     Create all objects with pools on awake
