@@ -20,9 +20,9 @@ namespace Controller
 
         #endregion
 
-        #region Methods
+        #region Lifecycle
 
-        // (Optional) Prevent non-singleton constructor use.
+        // Prevent non-singleton constructor use.
         protected RisingUpController()
         {
         }
@@ -39,6 +39,10 @@ namespace Controller
 
             transform.position += Vector3.up * (riseSpeed * multiplier * Time.deltaTime);
         }
+
+        #endregion
+
+        #region Methods
 
         private void OnCollisionEnter2D(Collision2D collision)
         {

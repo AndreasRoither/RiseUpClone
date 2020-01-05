@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    #region Fields
+
     public GameUiManager uiManager;
     public RisingUpController risingUpController;
     public float startDelay = 3f;
@@ -15,6 +17,10 @@ public class GameManager : MonoBehaviour
 
     private Coroutine currentCoroutine = null;
     private Vector3 newPosition = Vector3.zero;
+
+    #endregion
+
+    #region Lifecycle
 
     private void Awake()
     {
@@ -27,11 +33,20 @@ public class GameManager : MonoBehaviour
         risingUpController.hitEvent.AddListener(OnRiseUpHit);
     }
 
+    private void Update()
+    {
+        uiManager.SetScore((int) risingUpController.GetHeight());
+    }
+
     private void FixedUpdate()
     {
         //player.MovePosition(newPosition);
         player.position = newPosition;
     }
+
+    #endregion
+
+    #region Methods
 
     public void LoadStartMenu()
     {
@@ -52,19 +67,13 @@ public class GameManager : MonoBehaviour
 
     private void OnInputEnd()
     {
-        
     }
 
     private void OnRiseUpHit()
     {
         if (currentCoroutine != null) StopCoroutine(currentCoroutine);
-        uiManager.SetMidText("Nice try! Your highscore:" + (int)risingUpController.GetHeight());
+        uiManager.SetMidText("Nice try! Your highscore:" + (int) risingUpController.GetHeight());
         uiManager.ToggleRetryUi(true);
-    }
-
-    private void Update()
-    {
-        uiManager.SetScore((int) risingUpController.GetHeight());
     }
 
     private IEnumerator StartDelay()
@@ -78,4 +87,6 @@ public class GameManager : MonoBehaviour
         uiManager.SetMidText("");
         risingUpController.StartRise(0);
     }
+
+    #endregion
 }
