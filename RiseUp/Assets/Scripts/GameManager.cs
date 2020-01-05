@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //player.MovePosition(newPosition * Time.fixedDeltaTime);
+        //player.MovePosition(newPosition);
         player.position = newPosition;
     }
 

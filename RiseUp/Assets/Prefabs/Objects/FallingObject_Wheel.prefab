@@ -133,6 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a0fb96541f46dd49a0b2f006517eb59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceBeforeFall: 9
+  detectionRange: 8
   falling: 0
   fallIfHit: 1
