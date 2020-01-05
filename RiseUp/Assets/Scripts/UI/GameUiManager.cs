@@ -5,16 +5,11 @@ namespace UI
 {
     public class GameUiManager : MonoBehaviour
     {
-        #region Fields
-
         public TextMeshProUGUI levelText;
-        public TextMeshProUGUI scoreText;
         public TextMeshProUGUI midText;
         public GameObject retryUi;
+        public TextMeshProUGUI scoreText;
 
-        #endregion
-
-        #region Methods
 
         public void SetScore(int score)
         {
@@ -35,7 +30,5 @@ namespace UI
         {
             retryUi.SetActive(toggle);
         }
-
-        #endregion
     }
 }

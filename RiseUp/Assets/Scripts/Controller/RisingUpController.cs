@@ -9,22 +9,32 @@ namespace Controller
 {
     public class RisingUpController : Singleton<RisingUpController>
     {
-        #region Fields
-
-        public float riseSpeed = 0.5f;
-        public bool risingUp = false;
-        public UnityEvent hitEvent = new UnityEvent();
-        public bool hit = false;
         private readonly List<float> modifier = new List<float>();
-        private Coroutine currentRoutine = null;
 
-        #endregion
+        public ColliderRelay bodyRelay;
 
-        #region Lifecycle
+        public UnityEvent closeByEvent = new UnityEvent();
+
+        [Space] [Header("Relays")] public ColliderRelay closeByRelay;
+        private Coroutine currentRoutine;
+        private bool hit;
+
+        [Space] [Header("Events")] public UnityEvent hitEvent = new UnityEvent();
+
+        [Space] [Header("General")] public float riseSpeed = 0.5f;
+
+        private bool risingUp;
+
 
         // Prevent non-singleton constructor use.
         protected RisingUpController()
         {
+        }
+
+        private void Start()
+        {
+            if (closeByRelay != null) closeByRelay.colliderRelayEvent.AddListener(OnCloseByColliderHit);
+            if (bodyRelay != null) bodyRelay.colliderRelayEvent.AddListener(OnBodyColliderHit);
         }
 
         private void Update()
@@ -32,27 +42,24 @@ namespace Controller
             if (!risingUp) return;
             float multiplier = 1;
 
-            if (modifier.Count > 0)
-            {
-                multiplier = modifier.Aggregate((a, f) => a * f);
-            }
+            if (modifier.Count > 0) multiplier = modifier.Aggregate((a, f) => a * f);
 
             transform.position += Vector3.up * (riseSpeed * multiplier * Time.deltaTime);
         }
 
-        #endregion
-
-        #region Methods
-
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnCloseByColliderHit(Collider2D other)
         {
-            if (collision.gameObject.CompareTag("Player")) return;
+            closeByEvent?.Invoke();
+        }
+
+        private void OnBodyColliderHit(Collider2D other)
+        {
             if (hit) return;
             if (currentRoutine != null) StopCoroutine(currentRoutine);
             currentRoutine = null;
             risingUp = false;
             hit = true;
-            hitEvent.Invoke();
+            hitEvent?.Invoke();
         }
 
         public float GetHeight()
@@ -62,7 +69,7 @@ namespace Controller
 
         public void AddModifier(float f)
         {
-            this.modifier.Add(f);
+            modifier.Add(f);
         }
 
         public void ClearModifier()
@@ -92,7 +99,5 @@ namespace Controller
             yield return new WaitForSeconds(delayDuration);
             risingUp = toggle;
         }
-
-        #endregion
     }
 }

@@ -6,18 +6,12 @@ namespace Objects
     [RequireComponent(typeof(Rigidbody2D))]
     public class FallingObject : MonoBehaviour
     {
-        #region Fields
-
         public float detectionRange = 1f;
         public bool fallIfHit = true;
 
-        private bool falling = false;
-        private new Rigidbody2D rigidbody2D;
+        private bool falling;
         private float initialGravity;
-
-        #endregion
-
-        #region Lifecycle
+        private new Rigidbody2D rigidbody2D;
 
         private void Awake()
         {
@@ -30,21 +24,14 @@ namespace Objects
         {
             if (falling) return;
 
-            if (!(this.transform.position.y - RisingUpController.Instance.transform.position.y <
+            if (!(transform.position.y - RisingUpController.Instance.transform.position.y <
                   detectionRange)) return;
             InitiateFall();
         }
 
-        #endregion
-
-        #region Functions
-
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.CompareTag("Player"))
-            {
-                InitiateFall();
-            }
+            if (other.gameObject.CompareTag("Player")) InitiateFall();
         }
 
         private void InitiateFall()
@@ -52,8 +39,6 @@ namespace Objects
             falling = true;
             rigidbody2D.gravityScale = initialGravity;
         }
-
-        #endregion
 
         #region Gizmos
 

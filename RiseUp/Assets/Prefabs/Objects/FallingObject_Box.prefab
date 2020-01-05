@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5752029463271865552}
   - component: {fileID: 5752029463271865553}
   - component: {fileID: 5752029463271865554}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FallingObject_Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,5 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 8
-  falling: 0
   fallIfHit: 1

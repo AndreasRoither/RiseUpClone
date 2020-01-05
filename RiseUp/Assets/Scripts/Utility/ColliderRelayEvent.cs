@@ -2,15 +2,15 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace GameInput
+namespace Utility
 {
     /// <summary>
-    ///     Placeholder class for custom UnityEvent class
-    ///     <para />
+    /// Placeholder class for custom UnityEvent class
+    /// <para/>
     /// </summary>
     /// Author: Andreas Roither
     [Serializable]
-    public class InputEvent : UnityEvent<Vector3>
+    public class ColliderRelayEvent : UnityEvent<Collider2D>
     {
     }
 }

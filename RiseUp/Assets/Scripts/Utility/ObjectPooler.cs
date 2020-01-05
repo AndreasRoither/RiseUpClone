@@ -1,44 +1,43 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 namespace Utility
 {
     /// <summary>
-    /// Object pooler that is used to spawn objects without needing to instantiate them.
-    /// Holds references to objects that should be spawned and will reuse objects instead of destroying them.
+    ///     Object pooler that is used to spawn objects without needing to instantiate them.
+    ///     Holds references to objects that should be spawned and will reuse objects instead of destroying them.
     /// </summary>
     /// Author: Andreas Roither
     public class ObjectPooler : MonoBehaviour
     {
-        #region Fields
         [Serializable]
         public class Pool
         {
-            public string tag;
             public GameObject prefab;
             public int size;
+            public string tag;
         }
-
-        public bool destroyOnLoad = false;
-
+        
         private static ObjectPooler instance;
 
-        [SerializeField]
-        public Dictionary<string, Queue<GameObject>> poolDictionary;
+        public bool destroyOnLoad;
+
+        [SerializeField] public Dictionary<string, Queue<GameObject>> poolDictionary;
+
         public List<Pool> pools;
 
-        #endregion
 
-        #region Methods
         /// <summary>
-        /// Create all objects with pools on awake
+        ///     Create all objects with pools on awake
         /// </summary>
         private void Awake()
         {
             //Check if instance already exists
             if (instance == null)
+            {
                 instance = this;
+            }
 
             //If instance already exists and it's not this:
             else if (instance != this)
@@ -53,22 +52,18 @@ namespace Utility
             foreach (var pool in pools)
             {
                 var poolType = new GameObject(pool.tag);
-                var objectPool = new Queue<GameObject>();
+                Queue<GameObject> objectPool = new Queue<GameObject>();
 
                 for (var i = 0; i < pool.size; ++i)
                 {
-                    GameObject obj = Instantiate(pool.prefab);
+                    var obj = Instantiate(pool.prefab);
                     obj.SetActive(false);
                     objectPool.Enqueue(obj);
 
                     if (!destroyOnLoad)
-                    {
                         DontDestroyOnLoad(obj);
-                    }
                     else
-                    {
                         obj.transform.parent = poolType.transform;
-                    }
                 }
 
                 poolDictionary.Add(pool.tag, objectPool);
@@ -90,7 +85,7 @@ namespace Utility
         }
 
         /// <summary>
-        /// Retrieve object from pool and set at desired position/rotation
+        ///     Retrieve object from pool and set at desired position/rotation
         /// </summary>
         /// <param name="poolTag">Pool tag from which an object should be received</param>
         /// <param name="position">Target position</param>
@@ -114,7 +109,5 @@ namespace Utility
 
             return obj;
         }
-
-        #endregion
     }
 }

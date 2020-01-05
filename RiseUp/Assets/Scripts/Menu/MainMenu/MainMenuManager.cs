@@ -5,25 +5,20 @@ using UnityEngine.SceneManagement;
 namespace Menu.MainMenu
 {
     /// <summary>
-    /// Manages Menu state and transition
+    ///     Manages Menu state and transition
     /// </summary>
     /// Author: Andreas Roither
     public class MainMenuManager : MonoBehaviour
     {
-        #region Fields
-
         [Header("Menu Fields")] public GameObject mainMenu;
         public GameObject optionsMenu;
 
         // Text inputs
         [Space] [Header("Text Fields")] public TMP_InputField playerNameInputText;
 
-        #endregion
-
-        #region Methods
 
         /// <summary>
-        /// Load next scene in the build index
+        ///     Load next scene in the build index
         /// </summary>
         public void PlayGame()
         {
@@ -31,7 +26,7 @@ namespace Menu.MainMenu
         }
 
         /// <summary>
-        /// Close application
+        ///     Close application
         /// </summary>
         public void QuitGame()
         {
@@ -39,7 +34,7 @@ namespace Menu.MainMenu
         }
 
         /// <summary>
-        /// Transition to Options Menu
+        ///     Transition to Options Menu
         /// </summary>
         public void SwitchToOptionsMenu()
         {
@@ -48,14 +43,12 @@ namespace Menu.MainMenu
         }
 
         /// <summary>
-        /// Transition to Main Menu
+        ///     Transition to Main Menu
         /// </summary>
         public void SwitchToMainMenu()
         {
             optionsMenu.SetActive(false);
             mainMenu.SetActive(true);
         }
-
-        #endregion
     }
 }

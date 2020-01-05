@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7753023879329377978}
   - component: {fileID: 7753023879329377977}
   - component: {fileID: 7753023879329377981}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FallingObject_Fork
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 8
-  falling: 0
   fallIfHit: 1
 --- !u!70 &7753023879329377981
 CapsuleCollider2D:

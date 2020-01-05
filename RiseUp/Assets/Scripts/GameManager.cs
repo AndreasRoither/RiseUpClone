@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Controller;
 using GameInput;
 using UI;
@@ -8,19 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    #region Fields
-
-    public GameUiManager uiManager;
+    private Coroutine currentCoroutine;
+    public EmotionDisplay emotionDisplay;
+    private Vector3 newPosition = Vector3.zero;
+    public Rigidbody2D player;
     public RisingUpController risingUpController;
     public float startDelay = 3f;
-    public Rigidbody2D player;
 
-    private Coroutine currentCoroutine = null;
-    private Vector3 newPosition = Vector3.zero;
+    public GameUiManager uiManager;
 
-    #endregion
-
-    #region Lifecycle
 
     private void Awake()
     {
@@ -31,6 +26,7 @@ public class GameManager : MonoBehaviour
     {
         currentCoroutine = StartCoroutine(StartDelay());
         risingUpController.hitEvent.AddListener(OnRiseUpHit);
+        risingUpController.closeByEvent.AddListener(OnRiseUpCloseByHit);
     }
 
     private void Update()
@@ -43,10 +39,6 @@ public class GameManager : MonoBehaviour
         //player.MovePosition(newPosition);
         player.position = newPosition;
     }
-
-    #endregion
-
-    #region Methods
 
     public void LoadStartMenu()
     {
@@ -74,11 +66,17 @@ public class GameManager : MonoBehaviour
         if (currentCoroutine != null) StopCoroutine(currentCoroutine);
         uiManager.SetMidText("Nice try! Your highscore:" + (int) risingUpController.GetHeight());
         uiManager.ToggleRetryUi(true);
+        emotionDisplay.DisplayRandomEmotion(EmotionDisplay.Emotion.Lost);
+    }
+
+    private void OnRiseUpCloseByHit()
+    {
+        emotionDisplay.DisplayRandomEmotion(EmotionDisplay.Emotion.Close);
     }
 
     private IEnumerator StartDelay()
     {
-        for (float i = startDelay; i > 0; --i)
+        for (var i = startDelay; i > 0; --i)
         {
             uiManager.SetMidText("Starting in\n" + i);
             yield return new WaitForSeconds(1);
@@ -87,6 +85,4 @@ public class GameManager : MonoBehaviour
         uiManager.SetMidText("");
         risingUpController.StartRise(0);
     }
-
-    #endregion
 }

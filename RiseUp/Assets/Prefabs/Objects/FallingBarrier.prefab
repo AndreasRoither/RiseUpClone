@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5036450620093129378}
   - component: {fileID: 5036450620093129377}
   - component: {fileID: 5036450620093129376}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 5036450621200846760}
   - component: {fileID: 5036450621200846767}
   - component: {fileID: 5036450621200846766}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FallingBarrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 8
-  falling: 0
   fallIfHit: 1
 --- !u!60 &5036450621200846766
 PolygonCollider2D:
@@ -212,7 +211,7 @@ GameObject:
   - component: {fileID: 5036450621644179061}
   - component: {fileID: 5036450621644179060}
   - component: {fileID: 5036450621644179339}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Quad (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +305,7 @@ GameObject:
   - component: {fileID: 5036450621756033443}
   - component: {fileID: 5036450621756033442}
   - component: {fileID: 5036450621756033441}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Quad (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

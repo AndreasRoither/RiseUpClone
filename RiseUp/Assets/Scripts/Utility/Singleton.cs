@@ -3,18 +3,18 @@
 namespace Utility
 {
     /// <summary>
-    /// Inherit from this base class to create a singleton.
-    /// e.g. public class MyClassName : Singleton<MyClassName> {}
+    ///     Inherit from this base class to create a singleton.
+    ///     e.g. public class MyClassName : Singleton<MyClassName> {}
     /// </summary>
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         // Check to see if we're about to be destroyed.
-        private static bool mShuttingDown = false;
-        private static object mLock = new object();
+        private static bool mShuttingDown;
+        private static readonly object mLock = new object();
         private static T mInstance;
 
         /// <summary>
-        /// Access singleton instance through this propriety.
+        ///     Access singleton instance through this propriety.
         /// </summary>
         public static T Instance
         {
@@ -40,7 +40,7 @@ namespace Utility
                             // Need to create a new GameObject to attach the singleton to.
                             var singletonObject = new GameObject();
                             mInstance = singletonObject.AddComponent<T>();
-                            singletonObject.name = typeof(T).ToString() + " (Singleton)";
+                            singletonObject.name = typeof(T) + " (Singleton)";
 
                             // Make instance persistent.
                             DontDestroyOnLoad(singletonObject);
@@ -57,8 +57,7 @@ namespace Utility
             mShuttingDown = true;
             mInstance = null;
         }
-
-
+        
         private void OnDestroy()
         {
             mShuttingDown = true;

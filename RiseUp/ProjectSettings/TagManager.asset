@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Spot_001
+  - Spot_002
+  - Icon_001
+  - Text_001
   layers:
   - Default
   - TransparentFX
@@ -13,8 +17,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - IgnoreCollision
+  - NormalCollision
   - 
   - 
   - 
