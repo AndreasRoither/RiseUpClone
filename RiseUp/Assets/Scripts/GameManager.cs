@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     {
         //player.MovePosition(newPosition);
         player.position = newPosition;
+        //player.transform.Translate(newPosition - player.transform.position);
     }
 
     public void LoadStartMenu()

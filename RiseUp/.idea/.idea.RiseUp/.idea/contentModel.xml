@@ -108,6 +108,7 @@
           <e p="UI" t="Include">
             <e p="GameUiManager.cs" t="Include" />
             <e p="SpriteStretch.cs" t="Include" />
+            <e p="TutorialText.cs" t="Include" />
           </e>
           <e p="Utility" t="Include">
             <e p="ColliderRelay.cs" t="Include" />
