@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$USER_HOME$/.Rider2019.3/system/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/.Rider2019.3/system/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_RiseUp.-33063931.00" t="ExcludeRecursive" />
-    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+    <e p="C:\Users\Andreas\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Andreas\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_RiseUp.-55353716.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Andreas\Documents\Git\RiseUpClone\RiseUp" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -31,13 +31,13 @@
               </e>
             </e>
             <e p="gameicons" t="Include">
+              <e p="License.txt" t="Include" />
               <e p="Spritesheet" t="Include">
                 <e p="sheet_black1x.xml" t="Include" />
                 <e p="sheet_black2x.xml" t="Include" />
                 <e p="sheet_white1x.xml" t="Include" />
                 <e p="sheet_white2x.xml" t="Include" />
               </e>
-              <e p="license.txt" t="Include" />
             </e>
             <e p="generic-items-160-assets" t="Include">
               <e p="License.txt" t="Include" />
@@ -72,12 +72,12 @@
                   <e p="alienBlue.xml" t="Include" />
                   <e p="alienGreen.xml" t="Include" />
                   <e p="alienPink.xml" t="Include" />
-                  <e p="alienYellow.xml" t="Include" />
                   <e p="aliens.xml" t="Include" />
+                  <e p="alienYellow.xml" t="Include" />
                   <e p="enemies.xml" t="Include" />
                 </e>
               </e>
-              <e p="license.txt" t="Include" />
+              <e p="License.txt" t="Include" />
             </e>
           </e>
         </e>
@@ -161,10 +161,10 @@
           </e>
         </e>
       </e>
-      <e p="RiseUp.sln" t="IncludeFlat" />
-      <e p="Temp/bin" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
+      <e p="RiseUp.sln" t="IncludeFlat" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>

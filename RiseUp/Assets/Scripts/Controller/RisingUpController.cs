@@ -11,6 +11,10 @@ namespace Controller
     {
         [Space] [Header("General")] 
         public float riseSpeed = 0.5f;
+        public GameObject shield;
+        
+        // TODO: testing, remove later
+        public bool activateShield = false;
         
         [Space] [Header("Relays")] 
         public ColliderRelay bodyRelay;
@@ -39,6 +43,10 @@ namespace Controller
         private void Update()
         {
             if (!risingUp) return;
+            
+            // TODO: remove, testing purpose
+            shield.SetActive(activateShield);
+            
             float multiplier = 1;
 
             if (modifier.Count > 0) multiplier = modifier.Aggregate((a, f) => a * f);
