@@ -116,6 +116,7 @@
             <e p="DeactivationZone.cs" t="Include" />
             <e p="ObjectPooler.cs" t="Include" />
             <e p="Singleton.cs" t="Include" />
+            <e p="TutorialEnd.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">
