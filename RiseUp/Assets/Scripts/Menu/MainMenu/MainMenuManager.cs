@@ -13,20 +13,38 @@ namespace Menu.MainMenu
         [Header("Menu Fields")] 
         public GameObject mainMenu;
         public GameObject optionsMenu;
+        public GameObject playMenu;
 
         // Text inputs
         [Space] [Header("Text Fields")] 
         public TMP_InputField playerNameInputText;
 
-
         /// <summary>
         ///     Load next scene in the build index
         /// </summary>
-        public void PlayGame()
+        public void PlayMenu()
+        {
+            mainMenu.SetActive(false);
+            optionsMenu.SetActive(false);
+            playMenu.SetActive(true);
+        }
+
+        /// <summary>
+        ///     Load tutorial level
+        /// </summary>
+        public void PlayTutorial()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
+        /// <summary>
+        ///     Load regular game
+        /// </summary>
+        public void PlayGame()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            
+        }
         /// <summary>
         ///     Close application
         /// </summary>
@@ -41,6 +59,7 @@ namespace Menu.MainMenu
         public void SwitchToOptionsMenu()
         {
             mainMenu.SetActive(false);
+            playMenu.SetActive(false);
             optionsMenu.SetActive(true);
         }
 
@@ -50,6 +69,7 @@ namespace Menu.MainMenu
         public void SwitchToMainMenu()
         {
             optionsMenu.SetActive(false);
+            playMenu.SetActive(false);
             mainMenu.SetActive(true);
         }
     }
