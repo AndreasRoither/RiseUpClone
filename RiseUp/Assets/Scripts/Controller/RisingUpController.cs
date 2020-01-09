@@ -46,7 +46,7 @@ namespace Controller
             
             // TODO: remove, testing purpose
             shield.SetActive(activateShield);
-            
+
             float multiplier = 1;
 
             if (modifier.Count > 0) multiplier = modifier.Aggregate((a, f) => a * f);

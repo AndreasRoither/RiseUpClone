@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public float startDelay = 3f;
 
     private Coroutine currentCoroutine;
-    private Vector3 newPosition = Vector3.zero;
+    private Vector3 newPosition = new Vector3(0, -1 ,0);
 
     private void Awake()
     {
