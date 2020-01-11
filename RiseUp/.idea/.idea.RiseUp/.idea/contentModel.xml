@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\andir\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\andir\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_RiseUp.-624446384.00" t="ExcludeRecursive" />
-    <e p="C:\Users\andir\Documents\Git\RiseUpClone\RiseUp" t="IncludeRecursive">
+    <e p="C:\Users\Andreas\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Andreas\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_RiseUp.-55353716.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Andreas\Documents\Git\RiseUpClone\RiseUp" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -83,30 +83,31 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Controller" t="Include">
+            <e p="DifficultyController.cs" t="Include" />
             <e p="RisingUpController.cs" t="Include" />
-          </e>
-          <e p="EmotionDisplay.cs" t="Include" />
-          <e p="Extension" t="Include">
-            <e p="UnityEngineExtensions.cs" t="Include" />
           </e>
           <e p="GameInput" t="Include">
             <e p="InputEvent.cs" t="Include" />
             <e p="InputManager.cs" t="Include" />
           </e>
           <e p="GameManager.cs" t="Include" />
-          <e p="Menu" t="Include">
-            <e p="MainMenu" t="Include">
-              <e p="MainMenuManager.cs" t="Include" />
-            </e>
+          <e p="Level" t="Include">
+            <e p="LevelPooler.cs" t="Include" />
+            <e p="LevelProp.cs" t="Include" />
+            <e p="LevelPropSpawner.cs" t="Include" />
           </e>
           <e p="Objects" t="Include">
             <e p="FallingObject.cs" t="Include" />
             <e p="FloatingObject.cs" t="Include" />
             <e p="ObjectLauncher.cs" t="Include" />
           </e>
-          <e p="SimpleCameraController.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="GameUiManager.cs" t="Include" />
+            <e p="Menu" t="Include">
+              <e p="MainMenu" t="Include">
+                <e p="MainMenuManager.cs" t="Include" />
+              </e>
+            </e>
             <e p="SpriteStretch.cs" t="Include" />
             <e p="TutorialText.cs" t="Include" />
           </e>
@@ -114,7 +115,12 @@
             <e p="ColliderRelay.cs" t="Include" />
             <e p="ColliderRelayEvent.cs" t="Include" />
             <e p="DeactivationZone.cs" t="Include" />
+            <e p="EmotionDisplay.cs" t="Include" />
+            <e p="Extension" t="Include">
+              <e p="UnityEngineExtensions.cs" t="Include" />
+            </e>
             <e p="ObjectPooler.cs" t="Include" />
+            <e p="SimpleCameraController.cs" t="Include" />
             <e p="Singleton.cs" t="Include" />
             <e p="TutorialEnd.cs" t="Include" />
           </e>
@@ -147,7 +153,7 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
-        <e p="UI" t="Include">
+        <e p="UIBuilder" t="Include">
           <e p="StartMenu" t="Include">
             <e p="StartMenu.uss" t="Include" />
             <e p="StartMenu.uxml" t="Include" />

@@ -24,7 +24,7 @@ namespace Objects
         {
             // already falling
             if (falling) return;
-            
+
             // check if in falling range
             if (!(transform.position.y - RisingUpController.Instance.transform.position.y <
                   detectionRange)) return;

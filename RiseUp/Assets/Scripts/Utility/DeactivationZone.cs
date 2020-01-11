@@ -9,6 +9,7 @@ namespace Utility
         {
             if (other.gameObject.CompareTag("Player")) return;
             other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
         }
     }
 }

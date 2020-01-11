@@ -1,18 +1,18 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Utility
 {
-    /// <summary>
+    /// <summary MyClassName="{}">
     ///     Inherit from this base class to create a singleton.
-    ///     e.g. public class MyClassName : Singleton<MyClassName> {}
+    ///     e.g. public class MyClassName : Singleton
     /// </summary>
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         // Check to see if we're about to be destroyed.
-        private static bool mShuttingDown;
         private static readonly object mLock = new object();
         private static T mInstance;
-
+        
         /// <summary>
         ///     Access singleton instance through this propriety.
         /// </summary>
@@ -20,32 +20,22 @@ namespace Utility
         {
             get
             {
-                /*if (mShuttingDown)
-                {
-                    Debug.LogWarning("[Singleton] Instance '" + typeof(T) +
-                                     "' already destroyed. Returning null.");
-                    return null;
-                }*/
-
                 lock (mLock)
                 {
-                    if (mInstance == null)
-                    {
-                        // Search for existing instance.
-                        mInstance = (T) FindObjectOfType(typeof(T));
+                    if (mInstance != null) return mInstance;
+                    // Search for existing instance.
+                    mInstance = (T) FindObjectOfType(typeof(T));
 
-                        // Create new instance if one doesn't already exist.
-                        if (mInstance == null)
-                        {
-                            // Need to create a new GameObject to attach the singleton to.
-                            var singletonObject = new GameObject();
-                            mInstance = singletonObject.AddComponent<T>();
-                            singletonObject.name = typeof(T) + " (Singleton)";
+                    // Create new instance if one doesn't already exist.
+                    if (mInstance != null) return mInstance;
+                    
+                    // Need to create a new GameObject to attach the singleton to.
+                    var singletonObject = new GameObject();
+                    mInstance = singletonObject.AddComponent<T>();
+                    singletonObject.name = typeof(T) + " (Singleton)";
 
-                            // Make instance persistent.
-                            DontDestroyOnLoad(singletonObject);
-                        }
-                    }
+                    // Make instance persistent.
+                    DontDestroyOnLoad(singletonObject);
 
                     return mInstance;
                 }
@@ -54,13 +44,11 @@ namespace Utility
 
         private void OnApplicationQuit()
         {
-            mShuttingDown = true;
             mInstance = null;
         }
         
         private void OnDestroy()
         {
-            mShuttingDown = true;
             mInstance = null;
         }
     }
