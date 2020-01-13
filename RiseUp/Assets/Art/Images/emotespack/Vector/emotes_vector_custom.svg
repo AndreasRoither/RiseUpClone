@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Krita: http://krita.org -->
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:krita="http://krita.org/namespaces/svg/krita"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    width="1687.5pt"
+    height="1266pt"
+    viewBox="0 0 1687.5 1266">
+<defs/>
+<g id="group0" transform="matrix(0.999999973871937 0 0 0.999999973871937 3.47999997227859 3.4799999722786)" fill="none">
+  <path id="shape0" transform="matrix(0.720000020544793 0 0 0.720000020544793 0 -8.88178419700125e-16)" fill="#e6e6e6" d="M4 0L4 2L2 2L2 0L4 0M2 2L2 4L0 4L0 2L2 2M0 22L2 22L2 24L4 24L4 26L2 26L2 24L0 24L0 22M28 26L28 24L30 24L30 22L32 22L32 24L30 24L30 26L28 26M32 4L30 4L30 2L28 2L28 0L30 0L30 2L32 2L32 4"/>
+  <path id="shape1" transform="matrix(0.720000020544793 0 0 0.720000020544793 0 3.10862446895044e-15)" fill="#ffffff" d="M32 4L32 22L30 22L30 24L28 24L28 26L4 26L4 24L2 24L2 22L0 22L0 4L2 4L2 2L4 2L4 0L28 0L28 2L30 2L30 4L32 4M22 30L24 30L24 32L22 32L22 30M16 28L20 28L20 32L16 32L16 28"/>
+  <path id="shape01" transform="translate(7.22432672194145, 12.6520107312772)" fill="none" stroke="#312d2d" stroke-width="1.44" stroke-linecap="square" stroke-linejoin="miter" stroke-miterlimit="2" d="M0 1.43221C2.97833 -0.617094 5.8262 -0.332415 8.59135 1.43221"/>
+  <path id="shape11" transform="translate(5.48173088600663, 5.68855961522168)" fill="none" stroke="#312d2d" stroke-width="1.44" stroke-linecap="square" stroke-linejoin="bevel" d="M0 0L3.43654 1.46371L0.381838 3.02288"/>
+  <path id="shape011" transform="matrix(-0.999999966753689 0 0 -0.999999966753689 17.5582702715906 8.71144027846688)" fill="none" stroke="#312d2d" stroke-width="1.44" stroke-linecap="square" stroke-linejoin="bevel" d="M0 0L3.43654 1.46371L0.381838 3.02288"/>
+ </g>
+</svg>

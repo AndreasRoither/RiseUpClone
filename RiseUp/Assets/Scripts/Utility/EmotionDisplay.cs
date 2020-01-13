@@ -102,7 +102,7 @@ public class EmotionDisplay : MonoBehaviour
                 (position.x - xLeftBound);
         var y = (float) random.NextDouble() * (position.y + yUpperBound - (position.y - yLowerBound)) +
                 (position.y - yLowerBound);
-        spriteRenderer.transform.localPosition = new Vector3(x, y, 0);
+        spriteRenderer.transform.position = new Vector3(x, y, 0);
 
         if (currentSprite == null) return;
 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 09ee2deb68fe13e41a6fc5cee0bcad0a
+guid: fce6259de49d5fe4598f8f90d2260967
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -38,17 +38,17 @@ ScriptedImporter:
   spriteData:
     TessellationDetail: 0
     SpriteRect:
-      name: 
+      name: emotes_vector_customSprite
       originalName: 
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5008696, y: 0.5008696}
       alignment: 0
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 29, z: 0, w: 0}
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 0
-        height: 0
-      spriteID: 0663119138c9e5c409a39767452e9e54
+        width: 23
+        height: 23
+      spriteID: 4a7175734bc40544a8708986b790712a
       internalID: 0
     PhysicsOutlines: []
