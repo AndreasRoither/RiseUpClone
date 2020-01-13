@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
@@ -24,6 +25,11 @@ public class EmotionDisplay : MonoBehaviour
     public List<Sprite> lostEmotions = new List<Sprite>();
     public List<Sprite> loveEmotions = new List<Sprite>();
     public bool lostEmotionOverride = true;
+    
+    [Space][Header("Infinite Emotions")]
+    public bool infiniteEmotion = false;
+    public Emotion infiniteEmotionType;
+    public float repeatTime = 3f;
     
     [Space] [Header("Emotion time")] 
     public float minEmotionTime = 3f;
@@ -64,8 +70,13 @@ public class EmotionDisplay : MonoBehaviour
 
         currentSprite = happyEmotions[random.Next(0, happyEmotions.Count)];
         DisplayEmotion();
+        
+        if (infiniteEmotion)
+        {
+            StartCoroutine(SearchForTargetRepeat());
+        }
     }
-    
+
     public void DisplayEmotionIfPossible(Emotion emotion)
     {
         if (!(lostEmotionOverride && emotion == Emotion.Lost))
@@ -102,7 +113,7 @@ public class EmotionDisplay : MonoBehaviour
                 (position.x - xLeftBound);
         var y = (float) random.NextDouble() * (position.y + yUpperBound - (position.y - yLowerBound)) +
                 (position.y - yLowerBound);
-        spriteRenderer.transform.position = new Vector3(x, y, 0);
+        spriteRenderer.transform.localPosition = new Vector3(x, y, 0) * gameObject.transform.localScale.x;
 
         if (currentSprite == null) return;
 
@@ -117,6 +128,13 @@ public class EmotionDisplay : MonoBehaviour
         yield return new WaitForSeconds((float) vanishTime);
         spriteRenderer.sprite = null;
         currentSprite = null;
+    }
+    
+    private IEnumerator SearchForTargetRepeat() {
+        while(infiniteEmotion) {
+            DisplayEmotionIfPossible(infiniteEmotionType);
+            yield return new WaitForSeconds(repeatTime);
+        }
     }
 
     #region Gizmos
