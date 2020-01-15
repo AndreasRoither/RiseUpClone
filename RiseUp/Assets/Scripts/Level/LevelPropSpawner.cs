@@ -2,6 +2,7 @@
 using Controller;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using Utility;
 using Random = System.Random;
 
 namespace Level
@@ -10,7 +11,7 @@ namespace Level
     ///     Spawns Level Props depending on the difficulty
     ///     New objects are always spawned when the last prop spawn height is reached
     /// </summary>
-    public class LevelPropSpawner : MonoBehaviour
+    public class LevelPropSpawner : Singleton<LevelPropSpawner>
     {
         [Header("Initial Spawn")]
         public int initialSpawnAmount;

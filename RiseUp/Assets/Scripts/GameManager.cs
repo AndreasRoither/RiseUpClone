@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Controller;
 using GameInput;
+using Level;
 using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         InputManager.ContinuousInputEvent.AddListener(OnInput);
+        InputManager.InputEndEvent.AddListener(OnInputEnd);
     }
 
     private void Start()
@@ -31,6 +33,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         uiManager.SetScore((int) risingUpController.GetHeight());
+        uiManager.SetLevel(DifficultyController.Instance.DifficultyLevel);
     }
 
     private void FixedUpdate()
@@ -47,7 +50,7 @@ public class GameManager : MonoBehaviour
 
     public void Reload()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void OnInput(Vector3 position)
@@ -55,10 +58,12 @@ public class GameManager : MonoBehaviour
         //player.transform.position = position;
         //player.MovePosition(position);
         newPosition = position;
+        player.gameObject.SetActive(true);
     }
 
-    private void OnInputEnd()
+    private void OnInputEnd(Vector3 position)
     {
+        player.gameObject.SetActive(false);
     }
 
     private void OnRiseUpHit()
