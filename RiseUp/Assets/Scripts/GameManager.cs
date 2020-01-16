@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public GameUiManager uiManager;
     public EmotionDisplay emotionDisplay;
     public RisingUpController risingUpController;
-    public Rigidbody2D player;
+    public TargetJoint2D player;
     public LevelLoader levelLoader;
     public float startDelay = 3f;
 
@@ -41,8 +41,9 @@ public class GameManager : MonoBehaviour
     private void FixedUpdate()
     {
         //player.MovePosition(newPosition);
-        player.position = newPosition;
+        //player.position = newPosition;
         //player.transform.Translate(newPosition - player.transform.position);
+        player.target = newPosition;
     }
 
     public void LoadStartMenu()
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour
 
     private void OnInputEnd(Vector3 position)
     {
-        player.gameObject.SetActive(false);
+        //player.gameObject.SetActive(false);
     }
 
     private void OnRiseUpHit()

@@ -17,10 +17,10 @@ TagManager:
   - UI
   - 
   - 
-  - IgnoreCollision
-  - NormalCollision
-  - 
-  - 
+  - FallingObjects
+  - StaticObjects
+  - Player
+  - Jelly
   - 
   - 
   - 

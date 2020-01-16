@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4752733589862490692}
   - component: {fileID: 4752733589862490693}
   - component: {fileID: 4752733589862490690}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: FallingObject_Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
