@@ -5,6 +5,7 @@ using Level;
 using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Utility;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     public EmotionDisplay emotionDisplay;
     public RisingUpController risingUpController;
     public Rigidbody2D player;
+    public LevelLoader levelLoader;
     public float startDelay = 3f;
 
     private Coroutine currentCoroutine;
@@ -45,12 +47,12 @@ public class GameManager : MonoBehaviour
 
     public void LoadStartMenu()
     {
-        SceneManager.LoadScene(0);
+        levelLoader.LoadLevel(0);
     }
 
     public void Reload()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        levelLoader.LoadLevel(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void OnInput(Vector3 position)
