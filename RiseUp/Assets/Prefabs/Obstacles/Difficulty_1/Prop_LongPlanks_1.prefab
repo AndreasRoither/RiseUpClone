@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6768306044106736825}
   - component: {fileID: -4431677015930104818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Prop_LongPlanks_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

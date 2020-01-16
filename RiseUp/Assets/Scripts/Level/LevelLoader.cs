@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Utility
+namespace Level
 {
     public class LevelLoader : MonoBehaviour
     {

@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
 
     private void OnInputEnd(Vector3 position)
     {
-        //player.gameObject.SetActive(false);
+        player.gameObject.SetActive(false);
     }
 
     private void OnRiseUpHit()

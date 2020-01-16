@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1284263572554376512}
   - component: {fileID: -1596643755402072839}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Prop_LeftRightLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,6 +65,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6185746175327652181, guid: 62cf54542d2c8d7a3b385daef2885bef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6185746175327652182, guid: 62cf54542d2c8d7a3b385daef2885bef,
         type: 3}
@@ -166,6 +171,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6185746175327652181, guid: 62cf54542d2c8d7a3b385daef2885bef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6185746175327652182, guid: 62cf54542d2c8d7a3b385daef2885bef,
         type: 3}

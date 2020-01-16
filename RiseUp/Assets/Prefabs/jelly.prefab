@@ -1667,7 +1667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   riseSpeed: 1
   shield: {fileID: 8538919788219789752}
-  activateShield: 1
+  activateShield: 0
   bodyRelay: {fileID: 1739371197581437943}
   closeByRelay: {fileID: 1739371197346285244}
   closeByEvent:

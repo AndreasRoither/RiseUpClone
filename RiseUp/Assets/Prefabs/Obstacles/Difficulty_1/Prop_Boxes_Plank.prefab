@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5042092487960786607}
   - component: {fileID: 5042092487960786606}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Prop_Boxes_Plank
   m_TagString: Untagged
   m_Icon: {fileID: 0}

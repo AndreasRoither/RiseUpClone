@@ -11,40 +11,12 @@
           <e p="Images" t="Include">
             <e p="emotespack" t="Include">
               <e p="License.txt" t="Include" />
-              <e p="Spritesheets" t="Include">
-                <e p="pixel_style1.xml" t="Include" />
-                <e p="pixel_style2.xml" t="Include" />
-                <e p="pixel_style3.xml" t="Include" />
-                <e p="pixel_style4.xml" t="Include" />
-                <e p="pixel_style5.xml" t="Include" />
-                <e p="pixel_style6.xml" t="Include" />
-                <e p="pixel_style7.xml" t="Include" />
-                <e p="pixel_style8.xml" t="Include" />
-                <e p="vector_style1.xml" t="Include" />
-                <e p="vector_style2.xml" t="Include" />
-                <e p="vector_style3.xml" t="Include" />
-                <e p="vector_style4.xml" t="Include" />
-                <e p="vector_style5.xml" t="Include" />
-                <e p="vector_style6.xml" t="Include" />
-                <e p="vector_style7.xml" t="Include" />
-                <e p="vector_style8.xml" t="Include" />
-              </e>
             </e>
             <e p="gameicons" t="Include">
               <e p="License.txt" t="Include" />
-              <e p="Spritesheet" t="Include">
-                <e p="sheet_black1x.xml" t="Include" />
-                <e p="sheet_black2x.xml" t="Include" />
-                <e p="sheet_white1x.xml" t="Include" />
-                <e p="sheet_white2x.xml" t="Include" />
-              </e>
             </e>
             <e p="generic-items-160-assets" t="Include">
               <e p="License.txt" t="Include" />
-              <e p="Spritesheet" t="Include">
-                <e p="genericItems_spritesheet_colored.xml" t="Include" />
-                <e p="genericItems_spritesheet_white.xml" t="Include" />
-              </e>
             </e>
             <e p="platformer-art-complete-pack" t="Include">
               <e p="Base pack" t="Include">
@@ -57,24 +29,8 @@
                 <e p="Items" t="Include">
                   <e p="items_spritesheet.xml" t="Include" />
                 </e>
-                <e p="Player" t="Include">
-                  <e p="p1_spritesheet.txt" t="Include" />
-                  <e p="p2_spritesheet.txt" t="Include" />
-                  <e p="p3_spritesheet.txt" t="Include" />
-                </e>
                 <e p="Tiles" t="Include">
                   <e p="tiles_spritesheet.xml" t="Include" />
-                </e>
-              </e>
-              <e p="Extra animations and enemies" t="Include">
-                <e p="Spritesheets" t="Include">
-                  <e p="alienBeige.xml" t="Include" />
-                  <e p="alienBlue.xml" t="Include" />
-                  <e p="alienGreen.xml" t="Include" />
-                  <e p="alienPink.xml" t="Include" />
-                  <e p="aliens.xml" t="Include" />
-                  <e p="alienYellow.xml" t="Include" />
-                  <e p="enemies.xml" t="Include" />
                 </e>
               </e>
               <e p="License.txt" t="Include" />
@@ -92,9 +48,11 @@
           </e>
           <e p="GameManager.cs" t="Include" />
           <e p="Level" t="Include">
+            <e p="LevelLoader.cs" t="Include" />
             <e p="LevelPooler.cs" t="Include" />
             <e p="LevelProp.cs" t="Include" />
             <e p="LevelPropSpawner.cs" t="Include" />
+            <e p="TutorialEnd.cs" t="Include" />
           </e>
           <e p="Objects" t="Include">
             <e p="FallingObject.cs" t="Include" />
@@ -119,11 +77,9 @@
             <e p="Extension" t="Include">
               <e p="UnityEngineExtensions.cs" t="Include" />
             </e>
-            <e p="LevelLoader.cs" t="Include" />
             <e p="ObjectPooler.cs" t="Include" />
             <e p="SimpleCameraController.cs" t="Include" />
             <e p="Singleton.cs" t="Include" />
-            <e p="TutorialEnd.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

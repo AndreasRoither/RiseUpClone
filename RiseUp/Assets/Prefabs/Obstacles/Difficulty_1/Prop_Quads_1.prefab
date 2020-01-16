@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4506338892520255676}
   - component: {fileID: -2938215396495882510}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Prop_Quads_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

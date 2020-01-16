@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2481578906739950776}
   - component: {fileID: 3708287358843364915}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Prop_WheelPassage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,6 +203,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quad (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1997118691519920557, guid: 7d3394eff9220fc498681642e0bacff6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d3394eff9220fc498681642e0bacff6, type: 3}
 --- !u!4 &4163408531856897687 stripped
@@ -287,6 +292,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Quad
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997118691519920557, guid: 7d3394eff9220fc498681642e0bacff6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d3394eff9220fc498681642e0bacff6, type: 3}
