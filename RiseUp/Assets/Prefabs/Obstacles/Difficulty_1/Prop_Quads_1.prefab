@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4506338892520255676}
   - component: {fileID: -2938215396495882510}
+  - component: {fileID: 2087897362}
   m_Layer: 8
   m_Name: Prop_Quads_1
   m_TagString: Untagged
@@ -52,6 +53,22 @@ MonoBehaviour:
   height: 1.8
   marginTop: 0
   marginBottom: 0
+--- !u!114 &2087897362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3014141170584427404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bbb5b1703f4f18bba191731a64f4a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRange: 7
+  initiateFallEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &4229418650823931586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -119,16 +136,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977378, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: m_Size.x
@@ -144,26 +151,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a34671572bebef442904c211cb49ba51, type: 2}
-    - target: {fileID: 3473876706297977380, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
-    - target: {fileID: 3473876706297977381, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977381, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977383, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: distanceBeforeFall
-      value: 9.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977383, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: detectionRange
@@ -244,16 +231,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977378, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: m_Size.x
@@ -269,26 +246,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a34671572bebef442904c211cb49ba51, type: 2}
-    - target: {fileID: 3473876706297977380, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
-    - target: {fileID: 3473876706297977381, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977381, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977383, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: distanceBeforeFall
-      value: 9.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977383, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: detectionRange
@@ -369,16 +326,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977378, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: m_Size.x
@@ -394,26 +341,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a34671572bebef442904c211cb49ba51, type: 2}
-    - target: {fileID: 3473876706297977380, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
-    - target: {fileID: 3473876706297977381, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977381, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977383, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: distanceBeforeFall
-      value: 9.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977383, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: detectionRange
@@ -494,16 +421,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977378, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: m_Size.x
@@ -519,26 +436,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a34671572bebef442904c211cb49ba51, type: 2}
-    - target: {fileID: 3473876706297977380, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
-    - target: {fileID: 3473876706297977381, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977381, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977383, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: distanceBeforeFall
-      value: 9.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977383, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: detectionRange
@@ -619,16 +516,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977378, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: m_Size.x
@@ -644,26 +531,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a34671572bebef442904c211cb49ba51, type: 2}
-    - target: {fileID: 3473876706297977380, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
-    - target: {fileID: 3473876706297977381, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977381, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473876706297977383, guid: 55e3d145de6a5474b8ad288975a29da8,
-        type: 3}
-      propertyPath: distanceBeforeFall
-      value: 9.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977383, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: detectionRange

@@ -10,6 +10,7 @@ namespace Objects
         public bool fallIfHit = true;
 
         private bool falling;
+        private bool subscribedToParent;
         private float initialGravity;
         private new Rigidbody2D rigidbody2D;
 
@@ -18,12 +19,20 @@ namespace Objects
             rigidbody2D = GetComponent<Rigidbody2D>();
             initialGravity = rigidbody2D.gravityScale;
             rigidbody2D.gravityScale = 0.0f;
+
+            FallingObjectParent fp = transform.parent.GetComponent<FallingObjectParent>();
+
+            if (fp != null)
+            {
+                subscribedToParent = true;
+                fp.initiateFallEvent.AddListener(InitiateFall);
+            }
         }
 
         private void Update()
         {
             // already falling
-            if (falling) return;
+            if (falling || subscribedToParent) return;
 
             // check if in falling range
             if (!(transform.position.y - RisingUpController.Instance.transform.position.y <
@@ -49,6 +58,9 @@ namespace Objects
 
         private void OnDrawGizmos()
         {
+            FallingObjectParent fp = transform.parent.GetComponent<FallingObjectParent>();
+            if (fp != null) return;
+            
             Gizmos.color = Color.red;
             //Gizmos.DrawWireCube(this.transform.position, new Vector3(10, detectionRange * 2));
             Gizmos.DrawLine(transform.position,
