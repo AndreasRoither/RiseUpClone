@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 990811766147976225}
   - component: {fileID: 990811766147976238}
-  - component: {fileID: 9160345172449326052}
   - component: {fileID: 1304773939}
   m_Layer: 8
   m_Name: Prop_Small_Planks
@@ -54,23 +53,7 @@ MonoBehaviour:
   difficultyLevel: 1
   height: 0.72
   marginTop: 0
-  marginBottom: 0.25
---- !u!114 &9160345172449326052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990811766147976224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89bbb5b1703f4f18bba191731a64f4a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionRange: 7
-  initiateFallEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  marginBottom: 0
 --- !u!114 &1304773939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89bbb5b1703f4f18bba191731a64f4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRange: 7
+  detectionRange: 8
   initiateFallEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -107,7 +90,7 @@ PrefabInstance:
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
@@ -197,7 +180,7 @@ PrefabInstance:
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
@@ -287,7 +270,7 @@ PrefabInstance:
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
@@ -377,7 +360,7 @@ PrefabInstance:
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
@@ -467,7 +450,7 @@ PrefabInstance:
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
@@ -552,12 +535,12 @@ PrefabInstance:
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}

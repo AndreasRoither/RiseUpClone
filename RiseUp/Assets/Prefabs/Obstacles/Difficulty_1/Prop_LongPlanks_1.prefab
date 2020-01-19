@@ -50,7 +50,7 @@ MonoBehaviour:
   difficultyLevel: 1
   height: 1.5
   marginTop: 0
-  marginBottom: 1
+  marginBottom: 0
 --- !u!1001 &6768306043709032252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.25
+      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
@@ -181,7 +181,7 @@ PrefabInstance:
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 0.35000002
       objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
@@ -291,7 +291,7 @@ PrefabInstance:
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
@@ -401,7 +401,7 @@ PrefabInstance:
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.100000024
       objectReference: {fileID: 0}
     - target: {fileID: 3473876706297977377, guid: 55e3d145de6a5474b8ad288975a29da8,
         type: 3}

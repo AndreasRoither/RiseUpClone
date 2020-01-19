@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -10,11 +11,16 @@ namespace Controller
     public class RisingUpController : Singleton<RisingUpController>
     {
         [Space] [Header("General")] 
-        public float riseSpeed = 0.5f;
         public GameObject shield;
         
         // TODO: testing, remove later
         public bool activateShield = false;
+        
+        [Space][Header("Movement")]
+        public float riseSpeed = 0.5f;
+        public bool curveMovement = false;
+        public AnimationCurve yMovementCurve;
+        public AnimationCurve xMovementCurve;
         
         [Space] [Header("Relays")] 
         public ColliderRelay bodyRelay;
@@ -23,11 +29,13 @@ namespace Controller
         [Space] [Header("Events")] 
         public UnityEvent closeByEvent = new UnityEvent();
         public UnityEvent hitEvent = new UnityEvent();
-        
+
+        private Rigidbody2D body;
         private readonly List<float> modifier = new List<float>();
         private Coroutine currentRoutine;
         private bool hit;
         private bool risingUp;
+        private float timeElapsed = 0;
         
         // Prevent non-singleton constructor use.
         protected RisingUpController()
@@ -38,6 +46,7 @@ namespace Controller
         {
             if (closeByRelay != null) closeByRelay.colliderRelayEvent.AddListener(OnCloseByColliderHit);
             if (bodyRelay != null) bodyRelay.colliderRelayEvent.AddListener(OnBodyColliderHit);
+            body = GetComponent<Rigidbody2D>();
         }
 
         private void Update()
@@ -47,11 +56,31 @@ namespace Controller
             // TODO: remove, testing purpose
             shield.SetActive(activateShield);
 
+            
+            
+            //transform.position += 
+        }
+
+        private void FixedUpdate()
+        {
+            if (!risingUp) return;
+            
+            // Option with speed multiplier
             float multiplier = 1;
-
             if (modifier.Count > 0) multiplier = modifier.Aggregate((a, f) => a * f);
-
             transform.position += Vector3.up * (riseSpeed * multiplier * Time.deltaTime);
+            
+            
+            // New possible way with movement according to a curve
+            /*
+            timeElapsed += Time.deltaTime;
+            if (timeElapsed >= 1) timeElapsed = 0;
+            
+            var yModifier = yMovementCurve.Evaluate (timeElapsed);
+            var yMovement = Vector3.up * (riseSpeed * yModifier);
+            
+            var xyModifier = xMovementCurve.Evaluate (timeElapsed);
+            var xMovement = Vector3.left * (riseSpeed * yModifier);*/
         }
 
         private void OnCloseByColliderHit(Collider2D other)

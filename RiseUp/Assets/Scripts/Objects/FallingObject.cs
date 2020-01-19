@@ -20,12 +20,15 @@ namespace Objects
             initialGravity = rigidbody2D.gravityScale;
             rigidbody2D.gravityScale = 0.0f;
 
-            FallingObjectParent fp = transform.parent.GetComponent<FallingObjectParent>();
-
-            if (fp != null)
+            if (transform.parent != null)
             {
-                subscribedToParent = true;
-                fp.initiateFallEvent.AddListener(InitiateFall);
+                FallingObjectParent fp = transform.parent.GetComponent<FallingObjectParent>();
+
+                if (fp != null)
+                {
+                    subscribedToParent = true;
+                    fp.initiateFallEvent.AddListener(InitiateFall);
+                }
             }
         }
 
@@ -37,7 +40,7 @@ namespace Objects
             // check if in falling range
             if (!(transform.position.y - RisingUpController.Instance.transform.position.y <
                   detectionRange)) return;
-            
+
             // object is below player
             if (transform.position.y < RisingUpController.Instance.transform.position.y) return;
             InitiateFall();
@@ -58,9 +61,12 @@ namespace Objects
 
         private void OnDrawGizmos()
         {
-            FallingObjectParent fp = transform.parent.GetComponent<FallingObjectParent>();
-            if (fp != null) return;
-            
+            if (transform.parent != null)
+            {
+                FallingObjectParent fp = transform.parent.GetComponent<FallingObjectParent>();
+                if (fp != null) return;
+            }
+
             Gizmos.color = Color.red;
             //Gizmos.DrawWireCube(this.transform.position, new Vector3(10, detectionRange * 2));
             Gizmos.DrawLine(transform.position,

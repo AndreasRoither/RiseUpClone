@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1284263572554376512}
   - component: {fileID: -1596643755402072839}
   m_Layer: 8
-  m_Name: Prop_LeftRightLauncher
+  m_Name: Prop_LeftRightLauncher_Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficultyLevel: 1
-  height: 4
+  height: 2
   marginTop: 0
   marginBottom: 0
 --- !u!1001 &1284263572521429166

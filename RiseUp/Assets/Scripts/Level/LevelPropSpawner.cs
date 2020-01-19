@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using Controller;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
@@ -24,6 +26,8 @@ namespace Level
         private Vector3 nextLevelPropPosition = Vector3.zero;
         private float spawnHeightTrigger;
         private readonly Random random = new Random();
+        
+        private float gizmoSize = 0.1f;
 
         private void Awake()
         {
@@ -64,9 +68,9 @@ namespace Level
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.yellow;
-            Gizmos.DrawWireCube(new Vector3(0, spawnHeightTrigger, 0), Vector3.one);
+            Gizmos.DrawSphere(new Vector3(0, spawnHeightTrigger, 0), gizmoSize);
             Gizmos.color = Color.cyan;
-            Gizmos.DrawWireCube(nextLevelPropPosition, Vector3.one);
+            Gizmos.DrawSphere(nextLevelPropPosition, gizmoSize);
         }
 
         #endregion

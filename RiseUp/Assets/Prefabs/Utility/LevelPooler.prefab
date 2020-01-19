@@ -62,5 +62,7 @@ MonoBehaviour:
   - {fileID: 7806456738631087703, guid: 54fb0224a848a9641837c3a6820d94dc, type: 3}
   difficulty3:
   - {fileID: 7048846587467244400, guid: 9915c8275c52ae84ca1ee3ec66b790c0, type: 3}
-  difficulty4: []
-  difficulty5: []
+  difficulty4:
+  - {fileID: 4393641731592139040, guid: 98fce2b6c07008047965572547633dbe, type: 3}
+  difficulty5:
+  - {fileID: 5164846909026501599, guid: 69bb46e0b2cf0cb4d92bc42fc1038c4c, type: 3}

@@ -82,5 +82,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prop_LongPlanks_2 Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2189028577982307385, guid: a21b0e3d7a86c034bb378e7ef7b145ed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a21b0e3d7a86c034bb378e7ef7b145ed, type: 3}
