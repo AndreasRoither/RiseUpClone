@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   difficultyLevel: 1
   height: 5
-  marginTop: 0
+  marginTop: 0.25
   marginBottom: 0
 --- !u!114 &-2189028577982307385
 MonoBehaviour:

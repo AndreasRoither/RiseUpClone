@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3473876706297977378}
   - component: {fileID: 3473876706297977381}
   - component: {fileID: 3473876706297977383}
+  - component: {fileID: 3409231841604471066}
   m_Layer: 8
   m_Name: FallingObject
   m_TagString: Untagged
@@ -143,3 +144,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionRange: 8
   fallIfHit: 1
+--- !u!210 &3409231841604471066
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3473876706297977376}
+  m_Enabled: 1
+  m_SortingLayerID: 60004955
+  m_SortingLayer: 4
+  m_SortingOrder: 0

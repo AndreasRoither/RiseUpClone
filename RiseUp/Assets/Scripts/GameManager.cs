@@ -4,20 +4,25 @@ using GameInput;
 using Level;
 using UI;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using Utility;
 
 public class GameManager : MonoBehaviour
 {
+    private const string PlayerScore = "player_highscore";
+    
     public GameUiManager uiManager;
     public EmotionDisplay emotionDisplay;
     public RisingUpController risingUpController;
     public TargetJoint2D player;
     public LevelLoader levelLoader;
+    public Animator jellyAnimator;
     public float startDelay = 3f;
 
     private Coroutine currentCoroutine;
     private Vector3 newPosition = new Vector3(0, -1 ,0);
+    private string triggerName = "Stop";
 
     private void Awake()
     {
@@ -40,9 +45,6 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //player.MovePosition(newPosition);
-        //player.position = newPosition;
-        //player.transform.Translate(newPosition - player.transform.position);
         player.target = newPosition;
     }
 
@@ -58,8 +60,6 @@ public class GameManager : MonoBehaviour
 
     private void OnInput(Vector3 position)
     {
-        //player.transform.position = position;
-        //player.MovePosition(position);
         newPosition = position;
         player.gameObject.SetActive(true);
     }
@@ -71,10 +71,21 @@ public class GameManager : MonoBehaviour
 
     private void OnRiseUpHit()
     {
+        int score = (int) risingUpController.GetHeight();
+        int highScore = PlayerPrefs.GetInt(PlayerScore, score);
+        
         if (currentCoroutine != null) StopCoroutine(currentCoroutine);
-        uiManager.SetMidText("Nice try! Your highscore:" + (int) risingUpController.GetHeight());
+        jellyAnimator.SetTrigger(triggerName);
+        uiManager.SetMidText("Nice try!\n" + score);
+        uiManager.SetMidText2("Best: " + highScore);
         uiManager.ToggleRetryUi(true);
         emotionDisplay.DisplayEmotionIfPossible(EmotionDisplay.Emotion.Lost);
+
+        if (highScore <= risingUpController.GetHeight())
+        {
+            PlayerPrefs.SetInt(PlayerScore, score);
+            PlayerPrefs.Save();
+        }
     }
 
     private void OnRiseUpCloseByHit()
@@ -91,6 +102,7 @@ public class GameManager : MonoBehaviour
         }
 
         uiManager.SetMidText("");
+        uiManager.StartGradientChange();
         risingUpController.StartRise(0);
     }
 }

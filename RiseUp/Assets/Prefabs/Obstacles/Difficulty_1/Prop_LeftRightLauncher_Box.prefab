@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   difficultyLevel: 1
   height: 2
-  marginTop: 0
+  marginTop: 1
   marginBottom: 0
 --- !u!1001 &1284263572521429166
 PrefabInstance:
