@@ -38,7 +38,8 @@ namespace Controller
             if (bodyRelay != null) bodyRelay.colliderRelayEvent.AddListener(OnBodyColliderHit);
             body = GetComponent<Rigidbody2D>();
             
-            shield.SetActive(activeShield);
+            if (shield != null)
+                shield.SetActive(activeShield);
         }
 
         private void FixedUpdate()

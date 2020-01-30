@@ -1,5 +1,6 @@
-﻿using System.Security.Cryptography;
+﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Utility
 {
@@ -8,12 +9,40 @@ namespace Utility
         public AudioClip[] clips;
         public AudioSource audioSource;
         public bool randomPlay = false;
+        public float audioFadeTime = 1f;
+
         private int clipOrder = 0;
         private static AudioMixer instance;
+        private int loadedSceneIndex = -1;
+
+        private void Awake()
+        {
+            if (instance != null)
+            {
+                DestroyImmediate(this);
+            }
+            else
+            {
+                instance = this;
+                audioSource.loop = false;
+                DontDestroyOnLoad(this);
+                SceneManager.sceneLoaded += OnSceneLoaded;
+            }
+        }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
+        {
+            if (loadedSceneIndex == -1) loadedSceneIndex = scene.buildIndex;
+            else if (scene.buildIndex != loadedSceneIndex)
+            {
+                StartCoroutine(scene.buildIndex == 0 ? FadeOutSound() : FadeInSound());
+            }
+        }
 
         private void Update()
         {
             if (audioSource.isPlaying) return;
+            if (SceneManager.GetActiveScene().buildIndex == 0) return;
 
             audioSource.clip = randomPlay ? GetRandomClip() : GetNextClip();
             audioSource.Play();
@@ -38,15 +67,32 @@ namespace Utility
             return clips[clipOrder];
         }
 
-        private void Awake()
+        private IEnumerator FadeOutSound()
         {
-            if (instance != null)
-                DestroyImmediate(this);
-            else
+            float startVolume = audioSource.volume;
+
+            while (audioSource.volume > 0)
             {
-                instance = this;
-                audioSource.loop = false;
-                DontDestroyOnLoad(this);            
+                audioSource.volume -= startVolume * Time.deltaTime / audioFadeTime;
+                yield return null;
+            }
+
+            audioSource.Stop();
+            audioSource.volume = startVolume;
+        }
+
+        private IEnumerator FadeInSound()
+        {
+            audioSource.Stop();
+            float initialVolume = audioSource.volume;
+            float startVolume = audioSource.volume;
+
+            audioSource.volume = 0;
+
+            while (audioSource.volume < initialVolume)
+            {
+                audioSource.volume += startVolume * Time.deltaTime / audioFadeTime;
+                yield return null;
             }
         }
     }

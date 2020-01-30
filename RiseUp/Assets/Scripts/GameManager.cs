@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
         
         if (currentCoroutine != null) StopCoroutine(currentCoroutine);
         jellyAnimator.SetTrigger(triggerName);
-        uiManager.SetMidText("Nice try!\n" + score);
+        uiManager.SetMidText("Nice try!\nScore: " + score);
         uiManager.SetMidText2("Best: " + highScore);
         uiManager.ToggleRetryUi(true);
         emotionDisplay.DisplayEmotionIfPossible(EmotionDisplay.Emotion.Lost);
