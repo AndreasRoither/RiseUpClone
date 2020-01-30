@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1666,6 +1666,11 @@ PrefabInstance:
       propertyPath: xMovementCurve.m_Curve.Array.data[2].inWeight
       value: 0.33333334
       objectReference: {fileID: 0}
+    - target: {fileID: 7785242820526886304, guid: 26e98c8e4233c18438f927419bc02253,
+        type: 3}
+      propertyPath: activeShield
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7785242820526886307, guid: 26e98c8e4233c18438f927419bc02253,
         type: 3}
       propertyPath: m_Name
@@ -2446,6 +2451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highestDifficulty: 5
   difficultyModulo: 100
+  difficultyDelay: 5
 --- !u!95 &2082668468 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1739371196329954059, guid: 26e98c8e4233c18438f927419bc02253,
@@ -2561,17 +2567,17 @@ PrefabInstance:
     - target: {fileID: 5421858633134729345, guid: 8e7c1f8f748f81d4b837b53f73303260,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8480933
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5421858633134729345, guid: 8e7c1f8f748f81d4b837b53f73303260,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.8954012
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5421858633134729345, guid: 8e7c1f8f748f81d4b837b53f73303260,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -63.128906
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5421858633134729345, guid: 8e7c1f8f748f81d4b837b53f73303260,
         type: 3}
@@ -2617,6 +2623,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AudioMixer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421858633134729350, guid: 8e7c1f8f748f81d4b837b53f73303260,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e7c1f8f748f81d4b837b53f73303260, type: 3}
@@ -2696,6 +2707,11 @@ PrefabInstance:
         type: 3}
       propertyPath: initialSpawnAmount
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6589882054289906753, guid: 33a4d91baf184924e824172d09789dc9,
+        type: 3}
+      propertyPath: spawnHeightTriggerMultiplier
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6589882054289906815, guid: 33a4d91baf184924e824172d09789dc9,
         type: 3}

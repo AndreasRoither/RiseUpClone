@@ -1071,6 +1071,11 @@ PrefabInstance:
       propertyPath: hitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Hit
       objectReference: {fileID: 0}
+    - target: {fileID: 7785242820526886304, guid: 26e98c8e4233c18438f927419bc02253,
+        type: 3}
+      propertyPath: activeShield
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7785242820526886307, guid: 26e98c8e4233c18438f927419bc02253,
         type: 3}
       propertyPath: m_Name

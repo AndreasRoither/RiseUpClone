@@ -10,6 +10,7 @@ namespace Controller
     public class RisingUpController : Singleton<RisingUpController>
     {
         [Space] [Header("General")] public GameObject shield;
+        public bool activeShield;
 
         [Space] [Header("Movement")] public float riseSpeed = 0.5f;
         public bool curveMovement = false;
@@ -29,15 +30,15 @@ namespace Controller
         private bool risingUp;
 
         // Prevent non-singleton constructor use.
-        protected RisingUpController()
-        {
-        }
+        private RisingUpController() { }
 
         private void Start()
         {
             if (closeByRelay != null) closeByRelay.colliderRelayEvent.AddListener(OnCloseByColliderHit);
             if (bodyRelay != null) bodyRelay.colliderRelayEvent.AddListener(OnBodyColliderHit);
             body = GetComponent<Rigidbody2D>();
+            
+            shield.SetActive(activeShield);
         }
 
         private void FixedUpdate()

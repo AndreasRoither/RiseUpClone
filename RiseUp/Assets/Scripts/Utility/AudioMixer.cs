@@ -46,7 +46,7 @@ namespace Utility
             {
                 instance = this;
                 audioSource.loop = false;
-                DontDestroyOnLoad(transform.gameObject);            
+                DontDestroyOnLoad(this);            
             }
         }
     }

@@ -22,6 +22,7 @@ namespace Level
         [Header("Ingame spawn")]
         public int spawnAmount = 2;
         public float spawnMargin;
+        public float spawnHeightTriggerMultiplier;
         
         private Vector3 nextLevelPropPosition = Vector3.zero;
         private float spawnHeightTrigger;
@@ -36,7 +37,7 @@ namespace Level
             // spawn initial props
             for (int i = 0; i < initialSpawnAmount; ++i)
             {
-                spawnHeightTrigger = nextLevelPropPosition.y - spawnMargin;
+                spawnHeightTrigger = nextLevelPropPosition.y - spawnMargin * spawnHeightTriggerMultiplier;
                 SpawnProp();
             }
         }
@@ -47,7 +48,7 @@ namespace Level
 
             for (int i = 0; i < spawnAmount; ++i)
             {
-                spawnHeightTrigger = nextLevelPropPosition.y - spawnMargin;
+                spawnHeightTrigger = nextLevelPropPosition.y - spawnMargin * spawnHeightTriggerMultiplier;
                 SpawnProp();
             }
         }
