@@ -7,6 +7,7 @@ namespace Utility
     public class AudioMixer : MonoBehaviour
     {
         public AudioClip[] clips;
+        public string[] clipPaths;
         public AudioSource audioSource;
         public bool randomPlay = false;
         public float audioFadeTime = 1f;

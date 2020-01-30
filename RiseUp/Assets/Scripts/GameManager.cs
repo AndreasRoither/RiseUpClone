@@ -74,18 +74,19 @@ public class GameManager : MonoBehaviour
         int score = (int) risingUpController.GetHeight();
         int highScore = PlayerPrefs.GetInt(PlayerScore, score);
         
+        if (highScore <= score)
+        {
+            PlayerPrefs.SetInt(PlayerScore, score);
+            PlayerPrefs.Save();
+            highScore = score;
+        }
+        
         if (currentCoroutine != null) StopCoroutine(currentCoroutine);
         jellyAnimator.SetTrigger(triggerName);
         uiManager.SetMidText("Nice try!\nScore: " + score);
         uiManager.SetMidText2("Best: " + highScore);
         uiManager.ToggleRetryUi(true);
         emotionDisplay.DisplayEmotionIfPossible(EmotionDisplay.Emotion.Lost);
-
-        if (highScore <= risingUpController.GetHeight())
-        {
-            PlayerPrefs.SetInt(PlayerScore, score);
-            PlayerPrefs.Save();
-        }
     }
 
     private void OnRiseUpCloseByHit()
