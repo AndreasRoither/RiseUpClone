@@ -10,6 +10,7 @@ The gameplay is simple -> Protect the cute jelly from getting hit by objects :)
 Built with:  
 [CLion](https://www.jetbrains.com/rider/)  
 [Unity](https://unity.com/)  
+[Krita](https://krita.org/en/)  
 
 ### Credits
 Idea from [RiseUp](https://play.google.com/store/apps/details?id=com.riseup.game&hl=en) game on the app store.
