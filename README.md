@@ -8,8 +8,8 @@ The gameplay is simple -> Protect the cute jelly from getting hit by objects :)
 
 ### Technology used
 Built with:  
-[Visual Studio Code](https://code.visualstudio.com/)  
-[Unity](https://unity.com/)
+[CLion](https://www.jetbrains.com/rider/)  
+[Unity](https://unity.com/)  
 
 ### Credits
 Idea from [RiseUp](https://play.google.com/store/apps/details?id=com.riseup.game&hl=en) game on the app store.
