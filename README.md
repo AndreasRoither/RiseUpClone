@@ -5,3 +5,11 @@ This is a clone of the popular game [RiseUp](https://play.google.com/store/apps/
 The gameplay is simple -> Protect the cute jelly from getting hit by objects :)
 
 <img src="https://github.com/AndreasRoither/RiseUpClone/blob/master/gameplay.gif" alt="cute jelly gameplay" width="300" height="300">
+
+### Technology used
+Built with:  
+[Visual Studio Code](https://code.visualstudio.com/)  
+[Unity](https://unity.com/)
+
+### Credits
+Idea from [RiseUp](https://play.google.com/store/apps/details?id=com.riseup.game&hl=en) game on the app store.
