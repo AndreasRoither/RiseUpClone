@@ -37,9 +37,9 @@ namespace GameInput
         private static void CheckPcInput()
         {
             if (Input.GetMouseButton(0))
-                ContinuousInputEvent?.Invoke(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                ContinuousInputEvent?.Invoke(Camera.allCameras[0].ScreenToWorldPoint(Input.mousePosition));
             else if (Input.GetMouseButtonUp(0))
-                InputEndEvent?.Invoke(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                InputEndEvent?.Invoke(Camera.allCameras[0].ScreenToWorldPoint(Input.mousePosition));
         }
 
         /// <summary>
@@ -51,12 +51,12 @@ namespace GameInput
             foreach (var touch in Input.touches)
                 if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
                 {
-                    InputEndEvent?.Invoke(Camera.main.ScreenToWorldPoint(touch.position));
+                    InputEndEvent?.Invoke(Camera.allCameras[0].ScreenToWorldPoint(touch.position));
                     return;
                 }
                 else
                 {
-                    ContinuousInputEvent?.Invoke(Camera.main.ScreenToWorldPoint(touch.position));
+                    ContinuousInputEvent?.Invoke(Camera.allCameras[0].ScreenToWorldPoint(touch.position));
                     return;
                 }
         }
