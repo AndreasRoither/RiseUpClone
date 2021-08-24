@@ -1,4 +1,11 @@
-# RiseUpClone <img src="https://github.com/AndreasRoither/RiseUpClone/blob/master/jelly.png" alt="cute jelly" width="40" height="40">
+
+<h1 align="center">
+  <img src="https://github.com/AndreasRoither/RiseUpClone/blob/master/jelly.png" alt="cute jelly" width="80" height="80">
+  <br>
+  RiseUpClone
+
+  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+</h1>
 
 This is a clone of the popular game [RiseUp](https://play.google.com/store/apps/details?id=com.riseup.game&hl=en) created with [Unity](https://unity.com/).
 
